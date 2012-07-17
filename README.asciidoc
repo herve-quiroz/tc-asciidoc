@@ -1,0 +1,16 @@
+
+Java library to run AsciiDoc
+
+== Build
+
+----
+$ mvn clean install
+----
+
+== TODO
+
+- Stuff
+
+// vim: set syntax=asciidoc:
+// vim: set spell:
+// vim: set spelllang=en:
