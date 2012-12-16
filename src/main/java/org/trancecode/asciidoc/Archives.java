@@ -15,6 +15,7 @@
  */
 package org.trancecode.asciidoc;
 
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.ByteStreams;
 import com.google.common.io.Closeables;
@@ -96,6 +97,11 @@ public final class Archives
 
     private static void mkdirs(final File directory)
     {
+        if (directory.exists())
+        {
+            Preconditions.checkState(directory.isDirectory(), "file exists but is not a directory: %s", directory);
+            return;
+        }
         if (!directory.mkdirs())
         {
             throw new RuntimeException("cannot create directory: " + directory);
