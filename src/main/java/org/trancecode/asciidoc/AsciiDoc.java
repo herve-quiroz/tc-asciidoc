@@ -86,6 +86,12 @@ public final class AsciiDoc
         });
     }
 
+    public static void initialize()
+    {
+        // No-op method to force initialization (i.e. warm-up before actual use)
+        LOG.debug("{@method}");
+    }
+
     private static File getAsciiDocExecutable()
     {
         final File executable = new File(ASCIIDOC_DEPLOYED_DIRECTORY, ASCIIDOC_EXECUTABLE);
